@@ -51,7 +51,6 @@ async function fetchWeatherData(cityInfo) {
     latitude.toString() +
     "&product=civillight&output=json";
 
-    console.log(sevenTimerUrl);
 
   const response = await fetch(sevenTimerUrl)
     .then((response) => {
