@@ -7,7 +7,7 @@ fetchCityList();
 
 
 async function fetchCityList() {
-  const response = await fetch("js/city_coordinates.json")
+  const response = await fetch("./js/city_coordinates.json")
     .then((response) => {
       if (response.ok) {
         return response.json();
@@ -46,10 +46,12 @@ async function fetchWeatherData(cityInfo) {
 
   const sevenTimerUrl =
     "http://www.7timer.info/bin/api.pl?lon=" +
-    longitude +
+    longitude.toString() +
     "&lat=" +
-    latitude +
+    latitude.toString() +
     "&product=civillight&output=json";
+
+    console.log(sevenTimerUrl);
 
   const response = await fetch(sevenTimerUrl)
     .then((response) => {
