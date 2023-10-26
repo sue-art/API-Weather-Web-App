@@ -45,7 +45,7 @@ async function fetchWeatherData(cityInfo) {
   cityNameElement.innerHTML = city;
 
   const sevenTimerUrl =
-    "http://www.7timer.info/bin/api.pl?lon=" +
+    "https://www.7timer.info/bin/api.pl?lon=" +
     longitude.toString() +
     "&lat=" +
     latitude.toString() +
