@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22256%22 height=%22256%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2250%22 fill=%22%230058ff%22></rect><path fill=%22%23fff%22 d=%22M72.15 21.33L72.15 21.33Q74.49 22.50 74.90 25.02Q75.30 27.54 73.59 29.61L73.59 29.61Q72.42 31.23 70.58 31.41Q68.73 31.59 66.84 30.69L66.84 30.69Q64.68 29.70 62.30 29.16Q59.91 28.62 57.30 28.62L57.30 28.62Q52.44 28.62 48.62 30.15Q44.79 31.68 42.09 34.52Q39.39 37.35 38.00 41.22Q36.60 45.09 36.60 49.77L36.60 49.77Q36.60 55.26 38.18 59.31Q39.75 63.36 42.54 66.06Q45.33 68.76 49.11 70.07Q52.89 71.37 57.30 71.37L57.30 71.37Q59.73 71.37 62.16 70.92Q64.59 70.47 66.84 69.30L66.84 69.30Q68.73 68.40 70.58 68.67Q72.42 68.94 73.68 70.56L73.68 70.56Q75.48 72.81 74.99 75.20Q74.49 77.58 72.24 78.66L72.24 78.66Q69.90 79.83 67.43 80.60Q64.95 81.36 62.43 81.77Q59.91 82.17 57.30 82.17L57.30 82.17Q50.82 82.17 45.02 80.10Q39.21 78.03 34.67 73.98Q30.12 69.93 27.51 63.86Q24.90 57.78 24.90 49.77L24.90 49.77Q24.90 42.84 27.29 36.99Q29.67 31.14 34.04 26.87Q38.40 22.59 44.34 20.21Q50.28 17.82 57.30 17.82L57.30 17.82Q61.26 17.82 65.04 18.72Q68.82 19.62 72.15 21.33Z%22></path></svg>" />
+<meta charset="UTF-8">
+<meta http-equiv=“Pragma” content=”no-cache”>
+<meta http-equiv=“Expires” content=”-1″>
+<meta http-equiv=“CACHE-CONTROL” content=”NO-CACHE”>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+<!-- Bootstrap Font Icon CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="css/swiper-bundle.min.css">
+<!-- CSS -->
+<link rel="stylesheet" href="css/master.css">
+
+<!-- Jquery js for bootstrap -->
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<title>API Project</title>
+</head>
+
+<body class="swatch-indigo">
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Travel to Europe</h1>
+          <p class="lazy">Take a look at the weather forecast for major cities in Europe.</p>
+          <select class="dropdown btn btn-secondary btn-lg dropdown-toggle"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="citySelect" onchange="change_select(this.value)">
+            <option value="">Choose an option:</option>
+          </select>
+        </div>   
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="today-card" class="today card skeleton-loading today-weather">
+            <div class="card-body">
+              <h1 id="cityName" class="city-name"></h1>
+              <h1 class="card-title skeleton skeleton-text weather-date"></h1>
+              <div class="skeleton skeleton-icon-image weather-image cover-img">
+               
+              </div>
+              <h1 class="card-text skeleton skeleton-text skeleton-text__body weather-high"></h1>
+              <h3 class="card-text skeleton skeleton-text skeleton-text__body weather-info"></h3>
+              <p class="card-text skeleton skeleton-text weather-high-low skeleton-footer"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12">
+            <h4>Next 7 days</h4>
+          </div>
+          <div class="col-sm-12">
+            <swiper-container slides-per-view="3" id="weather-container" class="row slide-content">
+              <swiper-slide>
+                <div id="weather-card-one" class="card skeleton-loading weather swiper-slide">
+                    <div class="card-body">
+                      <h5 class="card-title skeleton skeleton-text weather-date"></h5>
+                      <div class="skeleton skeleton-icon-image weather-image cover-img">
+                         
+                      </div>
+                      <h1 class="card-text skeleton skeleton-text skeleton-text__body weather-high"></h1>
+                      <h3 class="card-text skeleton skeleton-text skeleton-text__body weather-info"></h3>
+                      <p class="card-text skeleton skeleton-text weather-high-low skeleton-text__body"></p>
+                    </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div id="weather-card-two" class="card skeleton-loading weather swiper-slide">
+                    <div class="card-body">
+                      <h5 class="card-title skeleton skeleton-text weather-date"></h5>
+                      <div class="skeleton skeleton-icon-image weather-image cover-img">
+                         
+                      </div>
+                      <h1 class="card-text skeleton skeleton-text skeleton-text__body weather-high"></h1>
+                      <h3 class="card-text skeleton skeleton-text skeleton-text__body weather-info"></h3>
+                      <p class="card-text skeleton skeleton-text weather-high-low skeleton-text__body"></p>
+                    </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div id="weather-card-three" class="card skeleton-loading weather swiper-slide">
+                    <div class="card-body">
+                      <h5 class="card-title skeleton skeleton-text weather-date"></h5>
+                      <div class="skeleton skeleton-icon-image weather-image cover-img">
+                        
+                      </div>
+                      <h1 class="card-text skeleton skeleton-text skeleton-text__body weather-high"></h1>
+                      <h3 class="card-text skeleton skeleton-text skeleton-text__body weather-info"></h3>
+                      <p class="card-text skeleton skeleton-text weather-high-low skeleton-text__body"></p>
+                  </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div id="weather-card-four" class="card skeleton-loading weather swiper-slide">
+                    <div class="card-body">
+                      <h5 class="card-title skeleton skeleton-text weather-date"></h5>
+                      <div class="skeleton skeleton-icon-image weather-image cover-img">
+                          
+                      </div>
+                      <h1 class="card-text skeleton skeleton-text skeleton-text__body weather-high"></h1>
+                      <h3 class="card-text skeleton skeleton-text skeleton-text__body weather-info"></h3>
+                      <p class="card-text skeleton skeleton-text weather-high-low skeleton-text__body"></p>
+                    </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div id="weather-card-five" class="card skeleton-loading weather swiper-slide">
+                    <div class="card-body">
+                      <h5 class="card-title skeleton skeleton-text weather-date"></h5>
+                      <div class="skeleton skeleton-icon-image weather-image cover-img">
+                         
+                      </div>
+                      <h1 class="card-text skeleton skeleton-text skeleton-text__body weather-high"></h1>
+                      <h3 class="card-text skeleton skeleton-text skeleton-text__body weather-info"></h3>
+                      <p class="card-text skeleton skeleton-text weather-high-low skeleton-text__body"></p>
+                    </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div id="weather-card-six" class="card skeleton-loading weather swiper-slide">
+                    <div class="card-body">
+                      <h5 class="card-title skeleton skeleton-text weather-date"></h5>
+                      <div class="skeleton skeleton-icon-image weather-image cover-img">
+                          
+                      </div>
+                      <h1 class="card-text skeleton skeleton-text skeleton-text__body weather-high"></h1>
+                      <h3 class="card-text skeleton skeleton-text skeleton-text__body weather-info"></h3>
+                      <p class="card-text skeleton skeleton-text weather-high-low skeleton-text__body"></p>
+                    </div>
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                  <div id="weather-card-seven" class="card skeleton-loading weather swiper-slide">
+                    <div class="card-body">
+                      <h5 class="card-title skeleton skeleton-text weather-date"></h5>
+                      <div class="skeleton skeleton-icon-image weather-image cover-img">
+                          
+                      </div>
+                      <h1 class="card-text skeleton skeleton-text skeleton-text__body weather-high"></h1>
+                      <h3 class="card-text skeleton skeleton-text skeleton-text__body weather-info"></h3>
+                      <p class="card-text skeleton skeleton-text weather-high-low skeleton-text__body"></p>
+                    </div>
+                  </div>
+              </swiper-slide>
+            </swiper-container>
+          </div> 
+        </div>  
+      </div>
+      </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <p>Weather API provided by 7Timer!</p>
+        <p><a href="https://www.freepik.com/icon/sun_2426634#fromView=keyword&term=Weather&page=3&position=0">Icon by Vitaly Gorbachev</a> 
+          <a href="https://www.freepik.com/icon/fog_2121441#fromView=resource_detail&position=14">Icon by bqlqn</a> 
+          <a href="https://www.freepik.com/icon/cloudy_2059281#fromView=resource_detail&position=19">Icon by Freepik</a></p>
+        <p class="copyright-text">© Copyright 2023 _______ </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+  <!-- Our codes -->
+  <script src="js/main.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script>
+
+  
+  <!-- Initialize Swiper -->
+  <script>
+
+    // swiper element
+    const swiperEl = document.querySelector('swiper-container');
+
+    // swiper parameters
+    const swiperParams = {
+      slidesPerView: 3,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        420: {
+            slidesPerView: 3,
+        },
+        950: {
+            slidesPerView: 4,
+        },
+      },
+      navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+      },
+      on: {
+        init() {
+          // ...
+        },
+      },
+    };
+
+    // now we need to assign all parameters to Swiper element
+    Object.assign(swiperEl, swiperParams);
+
+    </script>
+</html>

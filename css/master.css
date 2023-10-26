@@ -1,0 +1,163 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 10px 0 0;
+}
+
+.swatch-indigo {
+    color: #fff;
+    background-color: #6610f2;
+    
+}
+
+footer{
+    margin-top:100px;
+    text-align: center;
+}
+
+h1{
+    margin-top: 20px;
+    font-size: 30px;
+}
+p{
+    font-size: 16px;
+}
+a{
+    color: white;
+}
+.city-name{
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.card.today h1.weather-high{
+    font-size: 50px;
+    margin-top: 0;
+}
+
+.dropdown{
+    text-align: left;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: #660099;
+    border-color: #660099;
+}
+.btn-check:focus+.btn-secondary, .btn-secondary:focus {
+    color: #fff;
+    background-color: #660099;
+    border-color: #660099;
+    box-shadow: 0 0 0 0.1rem rgb(130 138 145 / 50%);
+}
+#citySelect a{
+    display: block;
+}
+
+.card{  
+    display: flex;
+    color: #ffffff;
+    padding:0px;
+    margin: 10px auto;
+    min-width: 50px;
+    width: 100%;
+    height: 170px;
+    border-radius: 5%;
+    background: #660099;
+    text-align: center;
+    flex-direction: column;
+}
+
+.card-body {
+    padding: 1rem 0.5rem;
+}
+
+.card p{
+    margin-bottom: 0;
+    font-size: 14px;
+}
+i{
+    font-size: 50px;
+}
+
+.card.today{
+    background: transparent;
+    height: 400px;
+    max-width: 300px;
+    width: 100%;
+    border: none;
+    margin: 20px auto;
+}
+
+
+.card.today .weather-date{
+    display: none;
+}
+.card.today span{
+    font-size: 20px;
+}
+.weather-date{
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.card.weather .weather-high,
+.card.weather .weather-info{
+    display: none;
+}
+.swiper-button-disabled {
+    opacity: 0 !important;
+}
+.weather-image{
+    margin: 10px auto;
+}
+
+.skeleton.skeleton-icon-image {
+    width: 128px;
+    height: 128px;
+    margin: 20px auto 30px;
+    border-radius: 150px;
+
+}
+
+.weather .skeleton.skeleton-icon-image{
+    width: 64px;
+    height: 64px;
+    margin: 20px auto;
+    border-radius: 50px;
+}
+.weather .skeleton-icon-image img{
+    width: 64px;
+    height: 64px;
+}
+.skeleton {
+    animation: skeleton-loading 1s linear infinite alternate;
+    margin: auto;
+}
+  
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(284, 51%, 57%);
+    }
+    100% {
+        background-color: hsl(278, 61%, 63%);
+    }
+}
+  
+.skeleton.skeleton-text {
+    width: 50%;
+    height: 0.7rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
+ 
+}
+  
+.skeleton.skeleton-text__body {
+    width: 40%;
+}
+  
+.skeleton.skeleton-footer {
+    width: 20%;
+}
+
+
