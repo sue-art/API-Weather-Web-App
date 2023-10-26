@@ -8,7 +8,7 @@ This task was provided by Google Coursera "Build a Website using an API with HTM
 
 ## Features
 - Weather API provided by 7Timer!
-- Boostrap
+- Bootstrap
 - Swiper Slider
 - Skeleton lazy loading 
 - Nice Icons
